@@ -1,4 +1,4 @@
-name := "Meteorelogicas"
+name := "ConsultasMeteorologicas"
 
 version := "0.1"
 
