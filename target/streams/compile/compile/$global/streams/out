@@ -1,0 +1,6 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Admin\Desktop\seminario-20191-scalalang\conf\routes:8:1: Cannot use a method returning play.api.mvc.Result as a Handler for requests[0m
+[0m[[0m[31merror[0m] [0m[0mGET     /mostra                     controllers.HomeController.mostra[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Admin\Desktop\seminario-20191-scalalang\conf\routes:8:1: not enough arguments for method createInvoker: (implicit hif: play.core.routing.HandlerInvokerFactory[play.api.mvc.Result])play.core.routing.HandlerInvoker[play.api.mvc.Result].[0m
+[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter hif.[0m
+[0m[[0m[31merror[0m] [0m[0mGET     /mostra                     controllers.HomeController.mostra[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
