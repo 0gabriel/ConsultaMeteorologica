@@ -22,12 +22,15 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
     Ok(views.html.index())
   }
 
-  def mostra()= Action { implicit request: Request[AnyContent] =>
-    Ok(views.html.exibe(Conexao.weatherCity("Brusque")))
+  def consultaClimaCidade(id: String)= Action {
+    implicit request: Request[AnyContent] =>
+    Ok(Conexao.weatherCity(id))
   }
 
-  def consultaClimaCidade(id: String)= Action { implicit request: Request[AnyContent] =>
-    Ok(Conexao.weatherCity(id))
+  def uv(id: String)= Action {
+    Conexao.uvCity(id)
+    implicit request: Request[AnyContent] =>
+      Ok(Conexao.uvCity(id))
   }
 
 }
