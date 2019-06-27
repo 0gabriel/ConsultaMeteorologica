@@ -28,9 +28,16 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
   }
 
   def uv(id: String)= Action {
-    Conexao.uvCity(id)
     implicit request: Request[AnyContent] =>
       Ok(Conexao.uvCity(id))
   }
+
+  def forecast(id: String)= Action {
+    Conexao.uvCity(id)
+    implicit request: Request[AnyContent] =>
+      Ok(Conexao.forecastCity(id))
+  }
+
+
 
 }
