@@ -1,9 +1,6 @@
 package controllers
 
 import play.api.libs.json.{JsValue, Json}
-import play.api.mvc._
-
-import scala.util.parsing.json.JSON
 
 object Conexao extends App {
   def key = "8b5a004556603b16260559b8b78120aa"
@@ -29,11 +26,8 @@ object Conexao extends App {
   }
 
   def forecastCity(cityName: String): String = {
-    val json: JsValue = Json.parse(weatherCity(cityName))
-    val longitude = (json \ "coord" \ "lon").asOpt[Double]
-    val latitude = (json \ "coord" \ "lat").asOpt[Double]
-    var url = urlOpening + "forecast?lat=" + latitude.get
-    url = url + "&lon=" + longitude.get
+    var url = urlOpening + "forecast?q="
+    url = url + cityName
     url = url + "&appid=" + key
     val result = scala.io.Source.fromURL(url).mkString
     result

@@ -1,7 +1,6 @@
 package controllers
 
 import javax.inject._
-import play.api._
 import play.api.mvc._
 
 /**
@@ -18,26 +17,22 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
    * will be called when the application receives a `GET` request with
    * a path of `/`.
    */
-  def index() = Action { implicit request: Request[AnyContent] =>
+  def index(): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
     Ok(views.html.index())
   }
 
-  def consultaClimaCidade(id: String)= Action {
+  def consultaClimaCidade(id: String): Action[AnyContent] = Action {
     implicit request: Request[AnyContent] =>
     Ok(Conexao.weatherCity(id))
   }
 
-  def uv(id: String)= Action {
+  def uv(id: String): Action[AnyContent] = Action {
     implicit request: Request[AnyContent] =>
       Ok(Conexao.uvCity(id))
   }
 
-  def forecast(id: String)= Action {
-    Conexao.uvCity(id)
+  def forecast(id: String): Action[AnyContent] = Action {
     implicit request: Request[AnyContent] =>
       Ok(Conexao.forecastCity(id))
   }
-
-
-
 }
